@@ -11,6 +11,7 @@ COPY Gemfile.lock /app/Gemfile.lock
 RUN bundle install
 RUN yarn install --prod
 COPY . /app
+RUN RAILS_ENV=production rails assets:precompile
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/

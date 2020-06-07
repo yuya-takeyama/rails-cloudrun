@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
